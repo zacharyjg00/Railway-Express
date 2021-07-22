@@ -16,25 +16,25 @@ Schedule.hasMany(Passenger, {
 });
 
 
-// passenger belongsTo schedule
+// schedule belongsTo train
 Schedule.belongsTo(Train, {
   foreignKey: 'train_id',
   onDelete: "CASCADE",
 });
 
-// schedule has many passengers
+// train has many schedule
 Train.hasMany(Schedule, {
   foreignKey: 'train_id',
 });
 
 
-// passenger belongsTo schedule
+// Station belongsTo schedule
 Station.belongsTo(Schedule, {
   foreignKey: 'schedule_id',
   onDelete: "CASCADE",
 });
 
-// schedule has many passengers
+// schedule has many stations
 Schedule.hasMany(Station, {
   foreignKey: 'schedule_id',
 });
