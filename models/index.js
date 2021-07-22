@@ -41,8 +41,8 @@ Schedule.hasMany(Station, {
 
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  Passenger,
+  Schedule,
+  Station,
+  Train,
 };
