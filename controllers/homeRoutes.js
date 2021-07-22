@@ -78,7 +78,7 @@ router.get('/train/:id', async (req, res) => {
     const station = stationData.get({ plain: true });
 
     res.render('train','schedule','station', {
-      ...train, schdule, station, 
+      ...train, ...schedule, ...station, 
       logged_in: req.session.logged_in
     });
   } catch (err) {
