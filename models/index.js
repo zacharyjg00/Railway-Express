@@ -17,14 +17,14 @@ Schedule.hasMany(Passenger, {
 
 
 // schedule belongsTo train
-Schedule.belongsTo(Train, {
-  foreignKey: 'train_id',
+Schedule.hasMany(Train, {
+  foreignKey: 'schedule_id',
   onDelete: "CASCADE",
 });
 
 // train has many schedule
-Train.hasMany(Schedule, {
-  foreignKey: 'train_id',
+Train.belongsTo(Schedule, {
+  foreignKey: 'schedule_id',
 });
 
 

@@ -31,7 +31,7 @@ Schedule.init(
     arival_location: {
       type: DataTypes.STRING,
     },
-
+/*
     train_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -46,7 +46,7 @@ Schedule.init(
         model: 'station',
         key: 'id',
       },
-    },
+    },*/
   },
 
   {
