@@ -3,17 +3,17 @@ const { Schedule } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-    try {
-      const newSchedule = await Schedule.create({
-        ...req.body,
-        user_id: req.session.user_id,
-      });
-  
-      res.status(200).json(newSchedule);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+  try {
+    const newSchedule = await Schedule.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newSchedule);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

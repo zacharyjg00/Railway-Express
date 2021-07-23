@@ -3,45 +3,45 @@ const { Train, Passenger, Schedule, Station } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    try {
-      const trainData = await Train.findAll({
-        include: [
-          {
-            model: Passenger,
-            attributes: ['name'],
-          },
-        ],
-      });
+  try {
+    const trainData = await Train.findAll({
+      include: [
+        {
+          model: Passenger,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-      const scheduleData = await Schedule.findAll({
-        include: [
-          {
-            model: Passenger,
-            attributes: ['name'],
-          },
-        ],
-      });
+    const scheduleData = await Schedule.findAll({
+      include: [
+        {
+          model: Passenger,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-      const stationData = await Station.findAll({
-        include: [
-          {
-            model: Passenger,
-            attributes: ['name'],
-          },
-        ],
-      });
+    const stationData = await Station.findAll({
+      include: [
+        {
+          model: Passenger,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-      const trains = trainData.map((train) => train.get({ plain: true }));
-      const schedules = scheduleData.map((schedule) => schedule.get({ plain: true }));
-      const stations = stationData.map((station) => station.get({ plain: true }));
-  
-      res.render('homepage', { 
-        trains, schedules, stations, 
-        logged_in: req.session.logged_in 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    const trains = trainData.map((train) => train.get({ plain: true }));
+    const schedules = scheduleData.map((schedule) => schedule.get({ plain: true }));
+    const stations = stationData.map((station) => station.get({ plain: true }));
+
+    res.render('homepage', {
+      trains, schedules, stations,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/train/:id', async (req, res) => {
@@ -63,7 +63,7 @@ router.get('/train/:id', async (req, res) => {
         },
       ],
     });
-    
+
     const stationData = await Station.findByPk(req.params.id, {
       include: [
         {
@@ -77,8 +77,8 @@ router.get('/train/:id', async (req, res) => {
     const schedule = scheduleData.get({ plain: true });
     const station = stationData.get({ plain: true });
 
-    res.render('train','schedule','station', {
-      ...train, ...schedule, ...station, 
+    res.render('train', 'schedule', 'station', {
+      ...train, ...schedule, ...station,
       logged_in: req.session.logged_in
     });
   } catch (err) {

@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Station extends Model {}
+class Station extends Model { }
 
 Station.init(
   {
@@ -17,7 +17,7 @@ Station.init(
       type: DataTypes.STRING,
     }
   },
-  
+
   {
     sequelize,
     timestamps: false,

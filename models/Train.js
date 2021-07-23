@@ -4,7 +4,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize train model (table) by extending off Sequelize's Model class
-class Train extends Model {}
+class Train extends Model { }
 
 // set up fields and rules for Product model
 Train.init(
@@ -28,7 +28,7 @@ Train.init(
         key: 'id',
       },
     },
-    
+
   },
   {
     sequelize,
