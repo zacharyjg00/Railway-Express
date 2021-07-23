@@ -27,6 +27,6 @@ const stationData = [
   },
 ];
 
-const seedStations = () => Tag.bulkCreate(stationData);
+const seedStations = () => Station.bulkCreate(stationData);
 
 module.exports = seedStations;
