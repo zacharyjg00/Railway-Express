@@ -20,7 +20,7 @@ Train.init(
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    schedle_id: {
+    schedule_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
