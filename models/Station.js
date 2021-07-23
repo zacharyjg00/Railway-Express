@@ -15,7 +15,15 @@ Station.init(
     },
     name: {
       type: DataTypes.STRING,
-    }
+    },
+    schedule_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'schedule',
+        key: 'id',
+      },
+    },
   },
 
   {

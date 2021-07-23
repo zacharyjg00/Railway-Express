@@ -3,7 +3,43 @@ const { Schedule } = require('../models');
 const scheduleData = [
   {
     depart_time: '10',
-    arival_time: '8PM',
+    arival_time: '8',
+    depart_location: "Test",
+    arival_location: "Test",
+    train_id: 1,
+    station_id: 1,
+  },
+
+  {
+    depart_time: '10',
+    arival_time: '8',
+    depart_location: "Test",
+    arival_location: "Test",
+    train_id: 1,
+    station_id: 1,
+  },
+
+  {
+    depart_time: '10',
+    arival_time: '8',
+    depart_location: "Test",
+    arival_location: "Test",
+    train_id: 1,
+    station_id: 1,
+  },
+
+  {
+    depart_time: '10',
+    arival_time: '8',
+    depart_location: "Test",
+    arival_location: "Test",
+    train_id: 1,
+    station_id: 1,
+  },
+
+  {
+    depart_time: '10',
+    arival_time: '8',
     depart_location: "Test",
     arival_location: "Test",
     train_id: 1,

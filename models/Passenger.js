@@ -48,15 +48,15 @@ Passenger.init(
     },
 
     phone_number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
 
-    reservation_id: {
+    schedule_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'reservation',
+        model: 'schedule',
         key: 'id',
       },
     },
