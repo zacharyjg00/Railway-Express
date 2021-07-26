@@ -4,39 +4,39 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const trainData = await Train.findAll({
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const trainData = await Train.findAll({
+    //   include: [
+    //     {
+    //       model: Passenger,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    const scheduleData = await Schedule.findAll({
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const scheduleData = await Schedule.findAll({
+    //   include: [
+    //     {
+    //       model: Passenger,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    const stationData = await Station.findAll({
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const stationData = await Station.findAll({
+    //   include: [
+    //     {
+    //       model: Passenger,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    const trains = trainData.map((train) => train.get({ plain: true }));
-    const schedules = scheduleData.map((schedule) => schedule.get({ plain: true }));
-    const stations = stationData.map((station) => station.get({ plain: true }));
+    // const trains = trainData.map((train) => train.get({ plain: true }));
+    // const schedules = scheduleData.map((schedule) => schedule.get({ plain: true }));
+    // const stations = stationData.map((station) => station.get({ plain: true }));
 
     res.render('homepage', {
-      trains, schedules, stations,
+      // trains, schedules, stations,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -112,5 +112,16 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('signup');
+});
+
+
 
 module.exports = router;
