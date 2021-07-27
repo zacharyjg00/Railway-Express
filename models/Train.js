@@ -16,13 +16,16 @@ Train.init(
       primaryKey: true,
       autoIncrement: true
     },
+    name: {
+      type: DataTypes.STRING,
+    },
     capacity: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    schedule: {
-      type: DataTypes.STRING
-    }
+    // schedule: {
+    //   type: DataTypes.ARRAY(DataTypes.STRING)
+    // }
   },
   {
     sequelize,

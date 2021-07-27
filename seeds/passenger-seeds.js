@@ -2,31 +2,22 @@ const { Passenger } = require('../models');
 
 const passengerData = [
   {
-    first_name: 'first',
-    last_name: 'last',
-    email: "Test@test.com",
-    password: "TestTest",
-    phone_number: "6510000000",
-    schedule_id: 1,
+    username: 'BobTheBest',
+    email: "bob@gmail.com",
+    password: "password123",
   },
 
   {
-    first_name: 'first',
-    last_name: 'last',
-    email: "Test@test1.com",
-    password: "TestTest",
-    phone_number: "6510000000",
-    schedule_id: 1,
+    username: 'bb8rox',
+    email: "swfl@hotmail.com",
+    password: "password123",
   },
 
   {
-    first_name: 'first',
-    last_name: 'last',
-    email: "Test@test2.com",
-    password: "TestTest",
-    phone_number: "6510000000",
-    schedule_id: 1,
-  }
+    username: 'oldman54',
+    email: "oldest@yahoo.com",
+    password: "password123",
+  },
 ];
 
 const seedPassengers = () => Passenger.bulkCreate(passengerData, {validate: true,individualHooks: true} );

@@ -2,36 +2,40 @@ const { Train } = require('../models');
 
 const trainData = [
   {
+    name: "Train1",
     capacity: 250,
-    schedule_id: 1,
-  },
-  
-  {
-    capacity: 200,
-    schedule_id: 3,
+    // schedule: ["8", "9"],
   },
 
   {
-    capacity: 150,
-    schedule_id: 3,
-  },
-
-  {
-    capacity: 200,
-    schedule_id: 2,
-  },
-
-  {
+    name: "Train2",
     capacity: 250,
-    schedule_id: 1,
+    // schedule: ["8", "9"],
   },
 
   {
-    capacity: 75,
-    schedule_id: 4,
+    name: "Train3",
+    capacity: 250,
+    // schedule: ["8", "9"],
   },
 
- 
+  {
+    name: "Train4",
+    capacity: 250,
+    // schedule: ["8", "9"],
+  },
+
+  {
+    name: "Train5",
+    capacity: 250,
+    // schedule: ["8", "9"],
+  },
+
+  {
+    name: "Train6",
+    capacity: 250,
+    // schedule: ["8", "9"],
+  },
 ];
 
 const seedTrain = () => Train.bulkCreate(trainData);
