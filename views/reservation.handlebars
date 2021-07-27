@@ -1,0 +1,41 @@
+<div>
+    <h2>Reserve your seat on a train!</h2>
+
+    <span> Please select the station you'd like to depart from</span>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle"
+            type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+        Stations
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        {{#each stations as |station| }}
+        <a class="dropdown-item" href="#!">{{{station.name}}}</a>
+        {{/each}}
+    </div>
+    </div>
+  <span> Please select which time you'd like to depart.</span>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle"
+        type="button" id="dropdownMenu1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+    Time
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <a class="dropdown-item" href="#!">7:00am</a>
+    <a class="dropdown-item" href="#!">8:00am</a>
+    <a class="dropdown-item" href="#!">9:00am</a>
+    <a class="dropdown-item" href="#!">10:00am</a>
+    <a class="dropdown-item" href="#!">11:00am</a>
+    <a class="dropdown-item" href="#!">12:00pm</a>
+    <a class="dropdown-item" href="#!">1:00pm</a>
+    <a class="dropdown-item" href="#!">2:00pm</a>
+    <a class="dropdown-item" href="#!">3:00pm</a>
+    <a class="dropdown-item" href="#!">4:00pm</a>
+    <a class="dropdown-item" href="#!">5:00pm</a>
+    <a class="dropdown-item" href="#!">6:00pm</a>
+    <a class="dropdown-item" href="#!">7:00pm</a>
+    <a class="dropdown-item" href="#!">8:00pm</a>
+    <a class="dropdown-item" href="#!">9:00pm</a>
+    <a class="dropdown-item" href="#!">10:00pm</a>
+</div>
