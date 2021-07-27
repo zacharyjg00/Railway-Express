@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Train, Passenger, Schedule, Station } = require('../models');
+const { Train, Passenger, Station, Reservation } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -90,15 +90,42 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const passengerData = await Passenger.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Train }],
     });
 
     const passenger = passengerData.get({ plain: true });
 
-    res.render('profile', {
-      ...passenger,
-      logged_in: true
+    const reservationData = await Reservation.findOne({
+      where: {
+        passenger_id: req.session.user_id
+      }
     });
+
+    if (reservationData) {
+      const reservation = reservationData.get({ plain: true });
+
+      
+      const trainData = await Train.findByPk(reservation.train_id);
+
+      const train = trainData.get({ plain: true });
+
+
+      const stationData = await Station.findByPk(reservation.station_id);
+
+      const station = stationData.get({ plain: true });
+
+      res.render('profile', {
+        ...passenger,
+        reservation,
+        train,
+        station,
+        logged_in: true
+      });
+    } else {
+      res.render('profile', {
+        ...passenger,
+        logged_in: true
+      })
+    };
   } catch (err) {
     res.status(500).json(err);
   }

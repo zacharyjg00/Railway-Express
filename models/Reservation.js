@@ -19,9 +19,6 @@ Reservation.init(
         depart_time: {
             type: DataTypes.STRING,
         },
-        depart_location: {
-            type: DataTypes.STRING,
-        },
         passenger_id: {
             type: DataTypes.INTEGER,
             references: {

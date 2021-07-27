@@ -2,13 +2,14 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{{username}}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
-  
-</head>
-<body class="m-3">
 
+
+{{#if reservation}}
+
+<body class="m-3">
   <div class="card">
     <div class="card-header bg-secondary text-white">
       Currently Booked Ticket
@@ -26,13 +27,23 @@
             <td>{{{Train Name}}}</td>
             <td>{{{Station Name}}}</td>
             <td>{{{Train Time}}}</td>
+        <tbody>
+          <tr>
+            <td>{{{train.name}}}</td>
+            <td>{{{station.name}}}</td>
+            <td>{{{reservation.depart_time}}}</td>
           </tr>
         </tbody>
         </thead>
         <tbody>
-          
         </tbody>
       </table>
     </div>
   </div>
 </body>
+
+{{else}}
+
+<button>Make reservation placeholder</button>
+
+{{/if}}
