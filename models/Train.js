@@ -20,15 +20,9 @@ Train.init(
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    schedule_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'schedule',
-        key: 'id',
-      },
-    },
-
+    schedule: {
+      type: DataTypes.STRING
+    }
   },
   {
     sequelize,
