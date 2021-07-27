@@ -4,13 +4,21 @@ const Station = require('./Station');
 const Train = require('./Train');
 const Reservation = require("./Reservation")
 
-Passenger.hasOne(Reservation, {});
+Passenger.hasOne(Reservation, {
+  foreignKey: "passenger_id"
+});
 
-Reservation.belongsTo(Passenger, {});
+Reservation.belongsTo(Passenger, {
+  foreignKey: "passenger_id"
+});
 
-Train.hasMany(Reservation, {});
+Train.hasMany(Reservation, {
+  foreignKey: "train_id"
+});
 
-Station.hasMany(Reservation, {});
+Station.hasMany(Reservation, {
+  foreignKey: "station_id"
+});
 
 module.exports = {
   Passenger,
