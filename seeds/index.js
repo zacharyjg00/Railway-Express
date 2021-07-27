@@ -1,6 +1,6 @@
 const seedPassengers = require('./passenger-seeds');
 const seedTrains = require('./train-seeds');
-const seedSchedule = require('./schedule-seeds');
+const seedReservation = require('./reservation-seeds');
 const seedStations = require('./station-seeds');
 
 const sequelize = require('../config/connection');
@@ -9,9 +9,6 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
 
-  await seedSchedule();
-  console.log('\n-----  SCHEDULES SEEDED -----\n');
-  
   await seedPassengers();
   console.log('\n----- PASSENGERS SEEDED -----\n');
 
@@ -20,6 +17,9 @@ const seedAll = async () => {
 
   await seedStations();
   console.log('\n----- STATIONS SEEDED -----\n');
+
+  await seedReservation();
+  console.log('\n-----  RESERVATIONS SEEDED -----\n');
 
   process.exit(0);
 };
