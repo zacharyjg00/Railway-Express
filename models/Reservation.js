@@ -17,10 +17,31 @@ Reservation.init(
             autoIncrement: true
         },
         depart_time: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
         },
         depart_location: {
             type: DataTypes.STRING,
+        },
+        passenger_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'passenger',
+                key: 'id',
+            },
+        },
+        train_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'train',
+                key: 'id',
+            },
+        },
+        station_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'station',
+                key: 'id',
+            },
         },
     },
     {
