@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+// Import bcrypt to hash the password before storing it in the db
 const bcrypt = require("bcrypt");
 const sequelize = require('../config/connection.js');
 
@@ -19,17 +20,10 @@ Passenger.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
-    first_name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,27 +32,12 @@ Passenger.init(
         isEmail: true
       }
     },
-
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [8]
       }
-    },
-
-    phone_number: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    schedule_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'schedule',
-        key: 'id',
-      },
     },
   },
 
