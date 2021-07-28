@@ -16,9 +16,6 @@ Reservation.init(
             primaryKey: true,
             autoIncrement: true
         },
-        depart_time: {
-            type: DataTypes.STRING,
-        },
         passenger_id: {
             type: DataTypes.INTEGER,
             references: {
