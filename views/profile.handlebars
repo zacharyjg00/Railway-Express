@@ -1,5 +1,3 @@
-
-
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{username}}!</h2>
@@ -15,7 +13,7 @@
       Currently Booked Ticket
     </div>
     <div class="card-body">
-      <table class="table table-sm table-hover">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">Station</th>
@@ -40,3 +38,33 @@
 <button>Make a Reservation</button>
 
 {{/if}}
+
+<body class="m-3">
+  <div class="card">
+    <div class="card-header bg-secondary text-white">
+      Passenger Details
+      <button id="delete-button" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE USER</button>
+      <button id="update-button" class="btn btn-sm btn-danger" data-id="{{id}}">UPDATE USER</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>{{{username}}}</td>
+            <td>{{{email}}}</td>
+          </tr>
+        </tbody>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+<script src="./js/profile.js"></script>
