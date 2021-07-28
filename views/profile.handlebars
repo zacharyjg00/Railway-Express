@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>Welcome, {{first_name}}!</h2>
   </div>
 </div>
 
@@ -50,12 +50,14 @@
       <table class="table table-sm">
         <thead>
           <tr>
-            <th scope="col">Username</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Email</th>
           </tr>
         <tbody>
           <tr>
-            <td>{{{username}}}</td>
+            <td>{{{first_name}}}</td>
+            <td>{{{last_name}}}</td>
             <td>{{{email}}}</td>
           </tr>
         </tbody>
