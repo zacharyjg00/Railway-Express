@@ -1,19 +1,17 @@
-<div>
-
-    <h1>Our Train</h1>
-
-    <span>Train bio here</span>
-
 <div class="card">
-
-    <span>Current Passengers</span>
-
-    <div class="card-body">
-   
+  <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
+  <div class="card-body">
+      <h4 class="card-title">Current Passengers</h4>
+      <p class="card-text">
+          Curious if your friends have booked a seat? Trying to avoid that annoying coworker? Check out our list below to view the train's current passengers. Don't worry, we won't tell!
+      </p>
         {{#each passengers as |passenger| }}
-        <div>{{{passenger.username}}}</div>
+        <div>{{{passenger.first_name}}} {{{passenger.last_name}}}</div>
         {{/each}}
-
-    </div>
+  </div>
 
 </div>
+
+
+
+
