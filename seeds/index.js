@@ -1,5 +1,4 @@
 const seedPassengers = require('./passenger-seeds');
-const seedTrains = require('./train-seeds');
 const seedReservation = require('./reservation-seeds');
 const seedStations = require('./station-seeds');
 
@@ -12,8 +11,6 @@ const seedAll = async () => {
   await seedPassengers();
   console.log('\n----- PASSENGERS SEEDED -----\n');
 
-  await seedTrains();
-  console.log('\n----- TRAINS SEEDED -----\n');
 
   await seedStations();
   console.log('\n----- STATIONS SEEDED -----\n');

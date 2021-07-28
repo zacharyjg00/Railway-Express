@@ -2,10 +2,10 @@ const router = require('express').Router();
 const passengerRoutes = require('./passengerRoutes');
 
 const stationRoutes = require('./stationRoutes');
-const scheduleRoutes = require('./scheduleRoutes');
+const reservationRoutes = require('./reservationRoutes');
 
 router.use('/passengers', passengerRoutes);
 router.use('/station', stationRoutes);
-router.use('/schedule', scheduleRoutes);
+router.use('/schedule', reservationRoutes);
 
 module.exports = router;

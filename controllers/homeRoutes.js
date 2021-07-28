@@ -83,7 +83,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get("/reservation", (req, res) => {
+router.get("/reservation", async (req, res) => {
   try {
     const stationData = await Station.findAll(reservation.station_id);
 
