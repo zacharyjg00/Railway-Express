@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>Welcome, {{first_name}}!</h2>
   </div>
 </div>
 
@@ -37,6 +37,15 @@
 
 {{else}}
 
-<a class="btn btn-primary" href="/reservation">Make a Reservation</a>
+<div class="card">
+  <div class="card-body">
+      <h4 class="card-title">No current reservations</h4>
+      <p class="card-text">
+          It looks like you don't have a spot currently reserved. Click the button below to get started!
+      </p>
+      <a class="btn btn-primary" href="/reservation">Make a Reservation</a>
+      
+  </div>
+</div>
 
 {{/if}}
