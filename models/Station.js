@@ -16,6 +16,9 @@ Station.init(
     name: {
       type: DataTypes.STRING,
     },
+    depart_time: {
+      type: DataTypes.STRING
+    }
   },
 
   {

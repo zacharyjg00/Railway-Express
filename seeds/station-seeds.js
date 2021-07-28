@@ -2,28 +2,36 @@ const { Station } = require('../models');
 
 const stationData = [
   {
-    name: 'Nicollete Mall',
+    name: 'Albert Lea',
+    depart_time: "7 AM"
   },
   {
-    name: '46th St',
+    name: 'Faribault',
+    depart_time: "8 AM"
   },
   {
-    name: 'Target Field Station',
+    name: 'Lakeville',
+    depart_time: "9 AM"
   },
   {
-    name: 'East Bank',
+    name: 'Minneapolis - St. Paul',
+    depart_time: "10 AM"
   },
   {
-    name: '50th St - Minnehaha',
+    name: 'St. Cloud',
+    depart_time: "11 AM"
   },
   {
-    name: 'Cedar-Riverside',
+    name: 'Brainerd',
+    depart_time: "12 PM"
   },
   {
-    name: 'West Bank',
+    name: 'Duluth',
+    depart_time: "1 PM"
   },
   {
-    name: 'Lake st - Midtown',
+    name: 'Bemidji',
+    depart_time: "2 PM"
   },
 ];
 
