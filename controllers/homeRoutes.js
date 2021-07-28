@@ -82,12 +82,13 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get("/reservation", async (req, res) => {
   try {
-    const stationData = await Station.findAll(reservation.station_id);
+    const stationData = await Station.findAll();
+    
 
-    const station = stationData.get({ plain: true });
+    const stations = stationData.map((station) => station.get({ plain: true }));
 
     res.render('reservation', {
-      station,
+      stations,
       logged_in: true
     });
 
