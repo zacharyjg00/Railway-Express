@@ -6,12 +6,16 @@
 
     <h3>{{{train.capacity}}}</h3>
 
+<div class="card">
+    
     <span>Current Passengers</span>
 
-    <div class="card">
     <div class="card-body">
-        
-    </div>
+   
+        {{#each passengers as |passenger| }}
+        <div>{{{passenger.username}}}</div>
+        {{/each}}
+
     </div>
 
 </div>

@@ -10,10 +10,9 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
         {{#each stations as |station| }}
-        <a class="dropdown-item" href="#!">{{{station.name}}}</a>
+        <a class="dropdown-item" href="#!">{{{station.name}}} - {{{station.depart_time}}}</a>
         {{/each}}
     </div>
     </div>
-  <h3>Depart Time:</h3><span>{{{reservation.depart_time}}}</span>
 
 </div>
