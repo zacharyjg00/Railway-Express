@@ -4,40 +4,37 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // const trainData = await Train.findAll({
-    //   include: [
-    //     {
-    //       model: Passenger,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-
-    // const scheduleData = await Schedule.findAll({
-    //   include: [
-    //     {
-    //       model: Passenger,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-
-    // const stationData = await Station.findAll({
-    //   include: [
-    //     {
-    //       model: Passenger,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-
-    // const trains = trainData.map((train) => train.get({ plain: true }));
-    // const schedules = scheduleData.map((schedule) => schedule.get({ plain: true }));
-    // const stations = stationData.map((station) => station.get({ plain: true }));
-
     res.render('homepage', {
-      // trains, schedules, stations,
       logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/train', async (req, res) => {
+  try {
+    const reservationData = await Reservation.findAll({});
+
+    const reservations = reservationData.map((reservation) => reservation.get({ plain: true }));
+
+
+    const passengerData = await Passenger.findAll({});
+
+    const passengers = passengerData.map((passenger) => passenger.get({ plain: true }));
+
+    let passengerReservations = [];
+    passengers.forEach(passenger => {
+      reservations.forEach(reservation => {
+        if (reservation.passenger_id == passenger.id) {
+          passengerReservations.push(passenger);
+        }
+      });
+    });
+
+    res.render('train', {
+      passengerReservations,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -85,12 +82,13 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get("/reservation", async (req, res) => {
   try {
-    const stationData = await Station.findAll(reservation.station_id);
+    const stationData = await Station.findAll();
+    
 
-    const station = stationData.get({ plain: true });
+    const stations = stationData.map((station) => station.get({ plain: true }));
 
     res.render('reservation', {
-      station,
+      stations,
       logged_in: true
     });
 
