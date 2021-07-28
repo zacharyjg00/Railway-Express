@@ -1,52 +1,10 @@
 const router = require('express').Router();
-const { Train, Passenger, Station, Reservation } = require('../models');
+const { Passenger, Station, Reservation } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/train/:id', async (req, res) => {
-  try {
-    const trainData = await Train.findByPk(req.params.id, {
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const scheduleData = await Schedule.findByPk(req.params.id, {
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const stationData = await Station.findByPk(req.params.id, {
-      include: [
-        {
-          model: Passenger,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const train = trainData.get({ plain: true });
-    const schedule = scheduleData.get({ plain: true });
-    const station = stationData.get({ plain: true });
-
-    res.render('train', 'schedule', 'station', {
-      ...train, ...schedule, ...station,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -71,11 +29,6 @@ router.get('/profile', withAuth, async (req, res) => {
     if (reservationData) {
       const reservation = reservationData.get({ plain: true });
 
-      
-      const trainData = await Train.findByPk(reservation.train_id);
-
-      const train = trainData.get({ plain: true });
-
 
       const stationData = await Station.findByPk(reservation.station_id);
 
@@ -84,7 +37,6 @@ router.get('/profile', withAuth, async (req, res) => {
       res.render('profile', {
         ...passenger,
         reservation,
-        train,
         station,
         logged_in: true
       });
@@ -94,6 +46,22 @@ router.get('/profile', withAuth, async (req, res) => {
         logged_in: true
       })
     };
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/reservation", (req, res) => {
+  try {
+    const stationData = await Station.findAll(reservation.station_id);
+
+    const station = stationData.get({ plain: true });
+
+    res.render('reservation', {
+      station,
+      logged_in: true
+    });
+
   } catch (err) {
     res.status(500).json(err);
   }
