@@ -118,6 +118,13 @@ form .form-input{
   overflow: hidden;
 }
 
+.card-body form{
+  margin: 5% 10% 10% 0%;
+  padding: 20px
+
+}
+
+
 
 img {
   border-style: none;
