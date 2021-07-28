@@ -12,6 +12,35 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/train', async (req, res) => {
+  try {
+    const reservationData = await Reservation.findAll({});
+
+    const reservations = reservationData.map((reservation) => reservation.get({ plain: true }));
+
+
+    const passengerData = await Passenger.findAll({});
+
+    const passengers = passengerData.map((passenger) => passenger.get({ plain: true }));
+
+    let passengerReservations = [];
+    passengers.forEach(passenger => {
+      reservations.forEach(reservation => {
+        if (reservation.passenger_id == passenger.id) {
+          passengerReservations.push(passenger);
+        }
+      });
+    });
+
+    res.render('train', {
+      passengerReservations,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const passengerData = await Passenger.findByPk(req.session.user_id, {
