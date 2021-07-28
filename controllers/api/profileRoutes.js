@@ -7,14 +7,9 @@ router.put('/:id', withAuth, async (req, res) => {
     try {
         const passengerData = await Passenger.update(req.body, {
             where: {
-                user_id: req.session.user_id,
+                id: req.session.user_id,
             },
         });
-
-        if (!passengerData) {
-            res.status(404).json({ message: 'No post found with this id!' });
-            return;
-        }
 
         res.status(200).json(passengerData);
     } catch (err) {
