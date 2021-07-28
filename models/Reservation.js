@@ -23,13 +23,6 @@ Reservation.init(
                 key: 'id',
             },
         },
-        train_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'train',
-                key: 'id',
-            },
-        },
         station_id: {
             type: DataTypes.INTEGER,
             references: {
