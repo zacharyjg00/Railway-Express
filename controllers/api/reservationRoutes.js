@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newReservation = await Reservation.create({
       ...req.body,
-      user_id: req.session.user_id,
+      passenger_id: req.session.user_id,
     });
 
     res.status(200).json(newReservation);
