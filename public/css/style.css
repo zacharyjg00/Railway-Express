@@ -42,8 +42,33 @@ a:hover {
   text-decoration: underline;
 }
 
+#logo{
+  font-size: 3rem;
+  font-weight: bold;
+  border-right: none;
+}
+
+#logo:hover {
+  background-color: transparent;
+  color: #660000;
+}
+
 h1 {
-  font-size: 3.25rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h4{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.jumbotron{
+  text-align: center;
   font-weight: bold;
 }
 
@@ -130,15 +155,19 @@ form{
   border-radius: 0.8rem;
 }
 
-a, p{
+a {
   font-size: 1.5rem;
   color: #660000;
   font-weight: bold;
 }
 
-h2{
-  font-size: 2rem;
+p {
+  font-size: 1.25rem;
+  color: #660000;
+  font-weight: bold;
 }
+
+
 
 form .form-group {
   width: 70%;
@@ -203,9 +232,17 @@ span{
 }
 
 .card{
-  
+  margin-top: 4%;
+  color: #005f73;
+}
+
+#train-schedule{
+  color: aqua;
+  margin-top: 0%;
 
 }
+
+
 
 img {
   border-style: none;
@@ -215,18 +252,4 @@ body {
   margin: 0;
   background-color: rgb(235, 243, 244);
   
-}
-
-
-@media screen and (min-width: 640px) {
-  
-}
-
-@media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 992px) {
-}
-
-@media screen and (min-width: 1200px) {
 }
