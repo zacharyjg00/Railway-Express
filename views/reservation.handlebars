@@ -2,21 +2,14 @@
     <h2>Reserve your seat on our train!</h2>
 
     <span> Please select the station you'd like to depart from</span>
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle"
-            type="button" id="dropdownMenu1" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-        Stations
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        {{#each stations as |station| }}
-        <a class="dropdown-item" href="#!" type="submit">{{{station.name}}} - {{{station.depart_time}}}</a>
-        {{/each}}
-
-
-    </div>
-    </div>
-
-
-
+    <form id="reservation-form">
+        <select id="reservation-dropdown">
+            {{#each stations as |station| }}
+            <option value={{station.id}}>{{{station.name}}} - {{{station.depart_time}}}</option>
+            {{/each}}
+        </select>
+        <button id="submit-button" type="submit">Submit</button>
+    </form>
 </div>
+
+<script src="./js/reservation.js"></script>
