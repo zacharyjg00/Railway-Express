@@ -83,7 +83,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get("/reservation", async (req, res) => {
   try {
     const stationData = await Station.findAll();
-    
+
 
     const stations = stationData.map((station) => station.get({ plain: true }));
 

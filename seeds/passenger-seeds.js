@@ -23,7 +23,7 @@ const passengerData = [
   },
 ];
 
-const seedPassengers = () => Passenger.bulkCreate(passengerData, {validate: true,individualHooks: true} );
+const seedPassengers = () => Passenger.bulkCreate(passengerData, { validate: true, individualHooks: true });
 
 
 module.exports = seedPassengers;

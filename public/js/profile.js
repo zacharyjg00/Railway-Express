@@ -2,7 +2,7 @@ const updateButtonHandler = async (event) => {
     const first_name = document.querySelector('#first-name').value.trim();
     const last_name = document.querySelector('#last-name').value.trim();
     const email = document.querySelector('#email').value.trim();
-    
+
     if (first_name && last_name && email) {
         if (event.target.hasAttribute('data-id')) {
             const id = event.target.getAttribute('data-id');
