@@ -17,6 +17,6 @@ const reservationData = [
   }
 ];
 
-const seedReservation = () => Reservation.bulkCreate(reservationData);
+const seedReservation = () => Reservation.bulkCreate(reservationData);0
 
 module.exports = seedReservation;
