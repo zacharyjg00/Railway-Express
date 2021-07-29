@@ -5,19 +5,11 @@ const exphbs = require("express-handlebars");
 const date = require("date-and-time");
 const routes = require("./controllers");
 
-// If we have custom hbs helpers link them here
-// const helpers = require('./utils/helpers');
-
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// TESTING 123
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-// If we have custom hbs helpers link them here
-// const hbs = exhps.create({ helpers})
 
 const sess = {
     secret: "secret secret I've got a secret",

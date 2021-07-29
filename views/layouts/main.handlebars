@@ -5,24 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Railway Express!</title>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="css" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="css" href="./public/css/style.css">
 </head>
-=======
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="css" href="/public/css/style.css">
-</header>
->>>>>>> 36f6c3c986a13a801f6065ab62d236d9a5fbe4e7
 
 <body>
 
   <header>
-  <div class="navbar navbar-light font-weight-bold">
+    <div class="navbar navbar-light font-weight-bold">
       <h1 class="text-left">Railway Express!</h1>
-      <nav class ="nav justify-content-right" id="nav-text">
+      <nav class="nav justify-content-right" id="nav-text">
         {{#if logged_in}}
         <a class="nav-link" href="/profile">Passenger Profile</a>
         <a class="nav-link" href="/reservation">Reservation</a>
@@ -33,7 +27,7 @@
         <a class="nav-link" href="/signup">Sign Up</a>
         {{/if}}
 
-  </div>
+    </div>
   </header>
 
   <main class="container container-fluid">
@@ -42,24 +36,24 @@
 
 
   </main>
-    <footer class="panel-footer">
-      <div class="container">
-        <div class="row">
-          <div id="left" class="col-sm-6 col-xs-12">
-            <p> some text </p>
-          </div>
-          <div id="right" class="col-sm-6 col-xs-12">
-            <a href="/comingsoon"><i class="fa fa-facebook-square"></i> </a>
-            <a href="/comingsoon"><i class="fa fa-twitter"></i> </a>
-            <a href="/comingsoon"><i class="fa fa-instagram"></i> </a>
-          </div>  
+  <footer class="panel-footer">
+    <div class="container">
+      <div class="row">
+        <div id="left" class="col-sm-6 col-xs-12">
+          <p> some text </p>
         </div>
-        
-        <div class="col-sm-12">
-          <p> <i class="fa fa-github"></i> 2021 Express Railway. All Right Reserved</p>
+        <div id="right" class="col-sm-6 col-xs-12">
+          <a href="/comingsoon"><i class="fa fa-facebook-square"></i> </a>
+          <a href="/comingsoon"><i class="fa fa-twitter"></i> </a>
+          <a href="/comingsoon"><i class="fa fa-instagram"></i> </a>
         </div>
       </div>
-    </footer>
+
+      <div class="col-sm-12">
+        <p> <i class="fa fa-github"></i> 2021 Express Railway. All Right Reserved</p>
+      </div>
+    </div>
+  </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>

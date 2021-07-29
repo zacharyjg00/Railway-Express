@@ -11,7 +11,6 @@ const seedAll = async () => {
   await seedPassengers();
   console.log('\n----- PASSENGERS SEEDED -----\n');
 
-
   await seedStations();
   console.log('\n----- STATIONS SEEDED -----\n');
 
