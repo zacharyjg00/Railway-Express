@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Passenger } = require('../../models');
 const withAuth = require('../../utils/auth');
-console.log("Into profiles")
 
 router.put('/:id', withAuth, async (req, res) => {
     try {
@@ -18,7 +17,6 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
-    console.log(req.params.id)
     try {
         if (req.session.logged_in) {
             req.session.destroy(() => {
