@@ -26,7 +26,24 @@ const updateButtonHandler = async (event) => {
 
 };
 
-const delButtonHandler = async (event) => {
+const delReservationButtonHandler = async (event) => {
+
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/reservation/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert('Failed to delete reservation');
+        }
+    }
+};
+
+const delProfileButtonHandler = async (event) => {
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
@@ -43,10 +60,16 @@ const delButtonHandler = async (event) => {
     }
 };
 
+if(document.querySelector("#delete-reservation-button")) {
+    document
+    .querySelector('#delete-reservation-button')
+    .addEventListener('click', delReservationButtonHandler);
+}
+
 document
     .querySelector('#update-button')
     .addEventListener('click', updateButtonHandler);
 
 document
-    .querySelector('#delete-button')
-    .addEventListener('click', delButtonHandler);
+    .querySelector('#delete-profile-button')
+    .addEventListener('click', delProfileButtonHandler);
