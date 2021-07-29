@@ -4,11 +4,13 @@
     <h1>The time is: {{timeNow}}</h1>
     {{#if nextStation}}
 
-    <h2>The last station the train was at was {{currentStation.name}} and is currently en route to {{nextStation.name}}.</h2>
+    <h2>Last station: {{currentStation.name}}</h2>
+    <h2>Next station: {{nextStation.name}}</h2>
 
     {{else if currentStation}}
 
-    <h2>The last station the train was at was {{currentStation.name}}. The train is done for the day. Thanks for riding!</h2>
+    <h2>Last station: {{currentStation.name}}</h2>
+    <h2>Next station: Done for the day</h2>
 
     {{else}}
 
