@@ -1,8 +1,6 @@
-
-
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>Welcome, {{first_name}}!</h2>
   </div>
 </div>
 
@@ -15,7 +13,7 @@
       Currently Booked Ticket
     </div>
     <div class="card-body">
-      <table class="table table-sm table-hover">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">Station</th>
@@ -37,6 +35,55 @@
 
 {{else}}
 
-<a class="btn btn-primary" href="/reservation">Make a Reservation</a>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">No current reservations</h4>
+    <p class="card-text">
+      It looks like you don't have a spot currently reserved. Click the button below to get started!
+    </p>
+    <a class="btn btn-primary" href="/reservation">Make a Reservation</a>
+
+  </div>
+</div>
 
 {{/if}}
+
+<body class="m-3">
+  <div class="card">
+    <div class="card-header bg-secondary text-white">
+      Passenger Details
+      <button id="delete-button" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE USER</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" id="first-name" name="first-name" value={{first_name}} />
+            </td>
+            <td>
+              <input type="text" id="last-name" name="last-name" value={{last_name}} />
+            </td>
+            <td>
+              <input type="email" id="email" name="email" value={{email}} />
+            </td>
+            <td>
+              <button id="update-button" class="btn btn-sm btn-danger" data-id="{{id}}">UPDATE USER</button>
+            </td>
+          </tr>
+        </tbody>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+<script src="./js/profile.js"></script>
