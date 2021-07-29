@@ -9,7 +9,7 @@
   font-family: 'Lora', serif;
 }
 
-/* header of the page handlebars*/
+/* header of the page*/
 header, .navbar {
   background: linear-gradient(to right, rgb(41, 75, 79) 0%, rgb(176, 187, 189) 63%);
   padding: 30px 20px;
@@ -23,7 +23,7 @@ nav .nav-link{
 
 a:hover {
   background-color: transparent;
-  color: #660000;
+  color: #005f73;
   text-decoration: underline;
 }
 
@@ -32,6 +32,17 @@ h1 {
   font-weight: bold;
 }
 
+/* logout button */
+button{
+  background-color: transparent;
+  color: #660000;
+  font-size: 24px;
+  border: none;
+  font-weight: bold;
+
+}
+
+
 /*home page handlebars*/
 
 main{
@@ -39,13 +50,29 @@ main{
   height: 800px;
   background-image: url('/Users/hewan/Documents/BootCamp/Projects/Railway-Express/public/images/train11.jpg');
   background-position: center;
-  background-repeat: no-repeat;
-  
+  background-repeat: no-repeat; 
 }
 
 .row{
   justify-content:space-evenly ;
 }
+
+/* home page images */
+
+.card-deck {
+  padding: 0.375rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-body form{
+  align-items: center;
+  margin: 0% 10% 0% 10%;
+  padding: 20px
+
+}
+
+/* footter section*/
 
 footer{
   background: linear-gradient(to right, rgb(41, 75, 79) 0%, rgb(176, 187, 189) 63%);
@@ -75,21 +102,22 @@ footer{
 
 /*login and signup page handlebars*/
 
+
 .btn.btn-primary {
   background-color: #005f73;
   padding: 8px 10px;
   color: #d9e9e8;
   width: 100%;
   border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
 }
 
-button{
-  background-color: transparent;
+a, p{
+  font-size: 1.5rem;
   color: #660000;
-  font-size: 24px;
-  border: none;
   font-weight: bold;
-
 }
 
 h2{
@@ -100,9 +128,9 @@ form {
 }
 
 form .form-group {
-  display: block;
-  width: 100%;
+  width: 70%;
   margin: 0.625rem 0;
+  font-size: 1.25rem;
 }
 
 form .form-input{
@@ -115,25 +143,16 @@ form .form-input{
   margin: 0.625rem 0;
   font-size: 1.2rem;
   border: 1px solid #484848;
-  border-radius: 0.3rem;
+  border-radius: 0.8rem;
 }
 
+/* Proifle page*/
 
 
-/* profile page handlebars*/
+/* Reservation page*/
 
-.card-deck {
-  padding: 0.375rem;
-  position: relative;
-  overflow: hidden;
-}
 
-.card-body form{
-  margin: 5% 10% 10% 0%;
-  padding: 20px
-
-}
-
+/* Train page*/
 
 img {
   border-style: none;
