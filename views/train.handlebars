@@ -1,16 +1,14 @@
 <div class="card">
   <div class="card-body">
-      <h4 class="card-title">Current Passengers</h4>
-      <p class="card-text">
-          Curious if your friends have booked a seat? Trying to avoid that annoying coworker? Check out our list below to view the train's current passengers. Don't worry, we won't tell!
-      </p>
-        {{#each passengerReservations as |passenger| }}
-        <div>{{{passenger.first_name}}} {{{passenger.last_name}}}</div>
-        {{/each}}
+
+    <h4 class="card-title">Current Passengers</h4>
+    <p class="card-text">
+      Curious if your friends have booked a seat? Trying to avoid that annoying coworker? Check out our list below to
+      view the train's current passengers. Don't worry, we won't tell!
+    </p>
+    {{#each passengers as |passenger| }}
+    <div>{{{passenger.first_name}}} {{{passenger.last_name}}}</div>
+    {{/each}}
   </div>
 
 </div>
-
-
-
-

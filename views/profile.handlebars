@@ -37,12 +37,12 @@
 
 <div class="card">
   <div class="card-body">
-      <h4 class="card-title">No current reservations</h4>
-      <p class="card-text">
-          It looks like you don't have a spot currently reserved. Click the button below to get started!
-      </p>
-      <a class="btn btn-primary" href="/reservation">Make a Reservation</a>
-      
+    <h4 class="card-title">No current reservations</h4>
+    <p class="card-text">
+      It looks like you don't have a spot currently reserved. Click the button below to get started!
+    </p>
+    <a class="btn btn-primary" href="/reservation">Make a Reservation</a>
+
   </div>
 </div>
 
@@ -53,7 +53,6 @@
     <div class="card-header bg-secondary text-white">
       Passenger Details
       <button id="delete-button" class="btn btn-sm btn-danger" data-id="{{id}}">DELETE USER</button>
-      <button id="update-button" class="btn btn-sm btn-danger" data-id="{{id}}">UPDATE USER</button>
     </div>
     <div class="card-body">
       <table class="table table-sm">
@@ -65,9 +64,18 @@
           </tr>
         <tbody>
           <tr>
-            <td>{{{first_name}}}</td>
-            <td>{{{last_name}}}</td>
-            <td>{{{email}}}</td>
+            <td>
+              <input type="text" id="first-name" name="first-name" value={{first_name}} />
+            </td>
+            <td>
+              <input type="text" id="last-name" name="last-name" value={{last_name}} />
+            </td>
+            <td>
+              <input type="email" id="email" name="email" value={{email}} />
+            </td>
+            <td>
+              <button id="update-button" class="btn btn-sm btn-danger" data-id="{{id}}">UPDATE USER</button>
+            </td>
           </tr>
         </tbody>
         </thead>

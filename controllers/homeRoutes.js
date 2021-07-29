@@ -1,12 +1,47 @@
 const router = require('express').Router();
 const { Passenger, Station, Reservation } = require('../models');
 const withAuth = require('../utils/auth');
+const date = require('date-and-time');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', {
-      logged_in: req.session.logged_in
-    });
+    const now = new Date();
+    const timeNow = date.format(now, "h:mm A");
+    const hourNow = date.format(now, "h A");
+
+    const stationData = await Station.findAll({});
+
+    const stations = stationData.map((station) => station.get({ plain: true }));
+    const stationTimes = stations.map((station) => station.depart_time);
+
+    const stationIdx = stationTimes.indexOf(hourNow)
+
+    if (stationIdx != -1 && (stationIdx + 1) == stations.length) {
+      const currentStation = stations[stationIdx];
+
+      res.render('homepage', {
+        timeNow,
+        currentStation,
+        logged_in: req.session.logged_in
+      });
+
+    } else if (stationIdx != -1) {
+      const currentStation = stations[stationIdx];
+      const nextStation = stations[stationIdx + 1];
+
+      res.render('homepage', {
+        timeNow,
+        currentStation,
+        nextStation,
+        logged_in: req.session.logged_in
+      });
+
+    } else {
+      res.render('homepage', {
+        timeNow,
+        logged_in: req.session.logged_in
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
@@ -83,7 +118,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get("/reservation", async (req, res) => {
   try {
     const stationData = await Station.findAll();
-    
+
 
     const stations = stationData.map((station) => station.get({ plain: true }));
 

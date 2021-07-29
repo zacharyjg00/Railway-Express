@@ -1,6 +1,23 @@
 <body class="m-3">
 
-  <div>Last station check in:</div><span>{{{schedule.station_name}}}</span>
+  <div class="jumbotron justify-content-center">
+    <h1>The time is {{timeNow}}</h1>
+    {{#if nextStation}}
+
+    <h2>Last station: {{currentStation.name}}</h2>
+    <h2>Next station: {{nextStation.name}}</h2>
+
+    {{else if currentStation}}
+
+    <h2>Last station: {{currentStation.name}}</h2>
+    <h2>Next station: Done for the day</h2>
+
+    {{else}}
+
+    <h2>The train is currently not running. Please visit our reservations page to make a reservation for the next trip!</h2>
+
+    {{/if}}
+  </div>
 
   <div class="card">
     <div class="card-header bg-secondary text-white">
@@ -51,24 +68,23 @@
       </table>
     </div>
   </div>
-
   </main>
 
-
-  <section id="pictures" class="row">
+  <section id="pictures" class="row justify-content-around">
     <!-- bottom immages-->
-    <div class="card-deck ">
+    <div class="card-deck">
       <div class="card-body col-md-3 col-sm-6 col-xs-12">
-        <img width="240" height="207" src="./images/station11.jpg">
+
+        <img width="240" height="207" src="/images/station11.jpg">
       </div>
       <div class="card-body col-md-3 col-sm-6 col-xs-12">
-        <img width="240" height="207" src="./images/train.jpg">
+        <img width="240" height="207" src="/images/train.jpg">
       </div>
       <div class="card-body col-md-3 col-sm-6 col-xs-12">
-        <img width="240" height="207" src="./images/train3.jpg">
+        <img width="240" height="207" src="/images/train3.jpg">
       </div>
       <div class="card-body col-md-3 col-sm-6 col-xs-12">
-        <img width="240" height="207" src="./images/train2.jpg">
+        <img width="240" height="207" src="/images/train2.jpg">
       </div>
     </div>
   </section>
