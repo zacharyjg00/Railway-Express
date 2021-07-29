@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="css" href="./public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
 
   <header>
     <div class="navbar navbar-light font-weight-bold">
-      <h1 class="text-left">Railway Express!</h1>
+      <h1 class="text-left" href="/"> Railway Express!</h1>
       <nav class="nav justify-content-right" id="nav-text">
         {{#if logged_in}}
+        <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/profile">Passenger Profile</a>
         <a class="nav-link" href="/reservation">Reservation</a>
         <a class="nav-link" href="/train">Train</a>
@@ -40,7 +41,7 @@
     <div class="container">
       <div class="row">
         <div id="left" class="col-sm-6 col-xs-12">
-          <p> some text </p>
+          <p>  </p>
         </div>
         <div id="right" class="col-sm-6 col-xs-12">
           <a href="/comingsoon"><i class="fa fa-facebook-square"></i> </a>

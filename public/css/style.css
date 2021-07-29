@@ -7,18 +7,23 @@
   box-sizing: border-box;
   color: #660000;
   font-family: 'Lora', serif;
+  
 }
 
 /* header of the page*/
 header, .navbar {
   background: linear-gradient(to right, rgb(41, 75, 79) 0%, rgb(176, 187, 189) 63%);
   padding: 30px 20px;
+  border:0;
+  border-radius: 0;
 }
+
 
 nav .nav-link{
   color: #660000;
   font-size: 24px;
   font-weight: bold;
+  border-right: 2px solid #005f73;
 }
 
 a:hover {
@@ -46,9 +51,10 @@ button{
 /*home page handlebars*/
 
 main{
+  padding-top: 5%;
   width: 100%;
   height: 800px;
-  background-image: url('/Users/hewan/Documents/BootCamp/Projects/Railway-Express/public/images/train11.jpg');
+  background-image: url('/images/train11.jpg');
   background-position: center;
   background-repeat: no-repeat; 
 }
@@ -187,7 +193,7 @@ span{
 }
 
 .card{
-
+  
 
 }
 
@@ -197,6 +203,8 @@ img {
 
 body {
   margin: 0;
+  background-color: rgb(235, 243, 244);
+  
 }
 
 
