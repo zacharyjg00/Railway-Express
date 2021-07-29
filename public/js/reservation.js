@@ -1,26 +1,24 @@
 const reservationFormHandler = async (event) => {
     event.preventDefault();
 
-    // const username = document.querySelector('#username-signup').value.trim();
-    // const email = document.querySelector('#email-signup').value.trim();
-    // const password = document.querySelector('#password-signup').value.trim();
+    const select = document.getElementById('reservation-dropdown');
 
+    const station_id = select.options[select.selectedIndex].value;
 
-    if (username && email && password) {
+    if (station_id) {
         const response = await fetch('/api/reservation', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify({ station_id }),
             headers: { 'Content-Type': 'application/json' },
         });
-    }
-
-    if (response.ok) {
-        document.location.replace('/profile');
-    } else {
-        alert(response.statusText);
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
+        }
     }
 };
 
 document
-    .querySelector('dropdown-item')
+    .querySelector('#reservation-form')
     .addEventListener('submit', reservationFormHandler);
