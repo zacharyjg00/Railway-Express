@@ -1,5 +1,5 @@
 # Railway-Express
-Deployment:
+Deployment: https://aqueous-fortress-46074.herokuapp.com/
 
 GitHub: https://github.com/zacharyjg00/Railway-Express
 
@@ -58,6 +58,16 @@ These requirements have been fulfilled through our display of functional code an
     Heroku
     Dotenv
     Express
+#
+
+## Mock-Up 
+
+    The following screenshots  show application's appearance and functionality -
+
+![Home Page.](./public/images/home.png)
+![profile.](./public/images/profile.png)
+![login](./public/images/login.png)
+![Signup](./public/images/signup.png)
 
 #
 
